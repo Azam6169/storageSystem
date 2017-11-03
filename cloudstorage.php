@@ -35,7 +35,7 @@ if (!isset($_SESSION['user'])) {
 }
 // url/event handler go here
 $app->get('/', function() use ($app) {
-    echo "This is stprage project";
+    echo "This is storage project";
 });
 
 $app->run();

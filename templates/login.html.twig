@@ -1,0 +1,34 @@
+{% extends "master.html.twig" %}
+
+
+{% block title %}Login{% endblock %}
+{% block css %} 
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+{% endblock %}
+{% block login %}
+
+
+<div class="login-clean">
+        <form method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Log In</button>
+            </div>
+            <div class="form-group">
+                {% if error %}
+                    <p>Login invalid. Try again or <a href="/register">register</a>.</p>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

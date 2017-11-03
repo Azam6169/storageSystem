@@ -1,0 +1,76 @@
+{% extends "master.html.twig" %}
+
+{% block title Register %}
+    {% block matchpwd %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+             $(document).ready(function () {
+            // respond to all events that may change the value of input
+            $('input[name=email]').bind('propertychange change click keyup input paste', function () {
+                // AJAX request
+                var email = $('input[name=email]').val();
+                $('#isTaken').load('/isemailregistered/' + email);
+            });
+        });
+        </script>
+    {% endblock %}
+
+
+    {% block register %}
+        <div class="row register-form">
+            <div class="col-md-8 col-md-offset-2">
+                <form method="post" class="form-horizontal custom-form" id="submit-register">
+                    <h1>Register Form</h1>
+                    <div class="form-group">
+                        <div class="col-sm-4 label-column">
+                            <label class="control-label" for="name-input-field">Name </label>
+                        </div>
+                        <span id="isTaken"></span>
+                        <div class="col-sm-6 input-column">
+                            <input class="form-control" id="nameregister" name="name" type="text" value="{{v.name}}">
+                            <label class="error-label" id="lbl-name-register"> x </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 label-column">
+                            <label class="control-label" for="email-input-field">Email </label>
+                        </div>
+                        <span id="isTaken"></span>
+                        <div class="col-sm-6 input-column">
+                            <input class="form-control" id="email" name="email" type="text" value="{{v.email}}">
+                            <label class="error-label" id="lbl-email"> x </label>
+                            <span id="isTaken"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 label-column">
+                            <label class="control-label" for="password-input-field">Password </label>
+                        </div>
+                        <div class="col-sm-6 input-column">
+                            <input class="form-control" name="pass1" id="pass1" type="password">
+                            <label class="error-label" id="lbl-pass1"/> x </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 label-column">
+                            <label class="control-label" for="repeat-password-input-field">Repeat Password </label>
+                        </div>
+                        <div class="col-sm-6 input-column">
+                            <input class="form-control" name="pass2" id="pass2" type="password">
+                            <label class="error-label" id="lbl-pass2"/> x </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-default submit-button" type="submit">Submit Form</button>
+                    {% if errorList %}
+                        <ul>
+                            {% for error in errorList %}
+                                <li class="disp-inline">{{error}}</li>
+                                {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                </form>
+            </div>
+        </div>
+
+    {% endblock %}

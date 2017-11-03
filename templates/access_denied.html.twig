@@ -1,0 +1,9 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Task {% if isEditing %}edit{% else %}add{% endif %}{% endblock %}
+{% block content %}
+    <h3>Access Denied</h3>
+    <p><a href="/">Click to continue</a></p>
+    <img src ="/images/access_denied.jpg">
+    
+{% endblock %}

@@ -1,0 +1,17 @@
+<<<<<<
+3/11/2017
+1.I created the database in phpmyadmin,I wrote the proposal and some pages in mookup.
+2.I have to finalize the pages and start to create.
+3.I have to check my databases with teache,asking about admin in seprate table or in user table.
+
+
+<<<<<<<
+4/11/2017
+1.I created the home page
+1.I have to search for some secrity issues
+3.Ask teacher for secure folder
+Secure file:
+$secretdir = md5(date("s-u"));
+echo $secretdir;
+http://sandbox.onlinephpfunctions.com/
+///////////////

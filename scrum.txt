@@ -1,13 +1,24 @@
-<<<<<<
-3/11/2017
-1.I created the database in phpmyadmin,I wrote the proposal and some pages in mookup.
-2.I have to finalize the pages and start to create.
-3.I have to check my databases with teache,asking about admin in seprate table or in user table.
 
+date and name
+1. what have i done / not done sincce last scrum?
+2. what will i do from now until next scrum?
+3. where do i need help from my teammate, teacher, or internet?
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+3/11/2017
+1. what have i done / not done sincce last scrum?
+-I created the Database in phpmyadmin.
+-I wrote the proposal.
+-I created the trello.
+2. what will i do from now until next scrum?
+-I have to implement all boards in trello.
+-I have to implement first page
+3. where do i need help from teacher, or internet?
+-I have to check my databases with teache,asking about admin in seprate table or in user table.
+-I have to search how storage web sites work!
 
 <<<<<<<
 4/11/2017
-1.I created the home page
+1.I modified the database,I created some borads in trello.
 1.I have to search for some secrity issues
 3.Ask teacher for secure folder
 Secure file:

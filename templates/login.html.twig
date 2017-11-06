@@ -1,34 +1,31 @@
+
 {% extends "master.html.twig" %}
+{% block title %}Log in{% endblock %}
 
 
-{% block title %}Login{% endblock %}
-{% block css %} 
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-{% endblock %}
-{% block login %}
+{% block content %}
 
+    <form method="post" id="loginForm">
+        
+        <div class="container">
+            {% if error %}
+                <p id="loginError">Enter valid email and password<p><br>
+            {% endif %}
 
-<div class="login-clean">
-        <form method="post">
-            <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" name="password" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Log In</button>
-            </div>
-            <div class="form-group">
-                {% if error %}
-                    <p>Login invalid. Try again or <a href="/register">register</a>.</p>
-                {% endif %}
-            </div>
-        </form>
-    </div>
+                    <label><b>E-mail</b></label>
+                    <input type="text" placeholder="Enter email" name="email" required>
 
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="pass" required>
 
-{% endblock %}
+                    <button type="submit">Login</button>
+
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" class="cancelbtn">Cancel</button>
+                        <span class="registerNow">New User?<a href="/register">Create an Account</a></span>
+                    </div>
+                    </form>
+
+{% endblock %} 

@@ -1,11 +1,13 @@
-<<<<<<
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Azam
 3/11/2017
 1.I created the database in phpmyadmin,I wrote the proposal and some pages in mookup.
 2.I have to finalize the pages and start to create.
 3.I have to check my databases with teache,asking about admin in seprate table or in user table.
 
 
-<<<<<<<
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Azam
 4/11/2017
 1.I created the home page
 1.I have to search for some secrity issues
@@ -14,4 +16,13 @@ Secure file:
 $secretdir = md5(date("s-u"));
 echo $secretdir;
 http://sandbox.onlinephpfunctions.com/
-///////////////
+<<<<<<<<<<<<<<<<<<<<
+Azam
+6/11/2017
+1.I created the share page in HTML.I wrote two function for filetype and file zise.
+1.I have to search for some secrity issues
+3.Ask teacher for errors in filetype function
+Secure file:
+$secretdir = md5(date("s-u"));
+echo $secretdir;
+http://sandbox.onlinephpfunctions.com/

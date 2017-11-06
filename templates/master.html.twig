@@ -1,49 +1,19 @@
-<!DOCTYPE html>
+
 <html>
-
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title page_title|title %}</title>
-        {% block matchpwd %}{% endblock %}
-        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/Pretty-Registration-Form.css">
-        {% block css %} {% endblock %}
-        <link rel="stylesheet" href="/assets/css/styles.css">
-    </head>
+        <link href="/styles.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <title>{% block title %}Default{% endblock %}</title>
+    {% block headextra %}{% endblock %}
 
-    <body>
-        <div>
-            <nav class="navbar navbar-default navigation-clean-button">
-                <div class="container">
-                    <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Todo List</a>
-                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navcol-1">
-                        <ul class="nav navbar-nav">
-                            <li role="presentation"><a href="/">List Todo</a></li>
-                            <li role="presentation"><a href="/add">Add Todo</a></li>
-                        </ul>
-                        
-                        {% if userSession %}
-            <p class="navbar-text navbar-right actions">You're logged in as {{ userSession.name }}.
-                You may <a href="/logout">Logout</a></p>
-        {% else %}
-        <p class="navbar-text navbar-right actions">You're not logged in. You may <a href="/register">Register</a>
-            or <a href="/login">Login</a></p>
-        {% endif %}
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="listTrip">
-        
-        {% block register %}{% endblock %}
-        {% block login %}{% endblock %}
-        {% block content %}{% endblock %}
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/script.js"></script>
-    </body>
 
+</head>
+<body>
+
+    <div id="centeredContent">
+            {% block content %}{% endblock %}
+    </div>
+    
+</body>
 </html>

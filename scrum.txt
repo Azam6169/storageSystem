@@ -2,11 +2,11 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 Azam
 3/11/2017
-1.I created the database in phpmyadmin,I wrote the proposal and some pages in mookup.
-2.I have to finalize the pages and start to create.
-3.I have to check my databases with teache,asking about admin in seprate table or in user table.
+1.I created the database in phpmyadmin,I wrote the proposal.
+2.I have to finalize the pages and create the Login page.
+3.I have to check my Databases with teacher,asking about admin in  seprate table or in user table.
 =======
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+>>>>>>> 
 
 date and name
 1. what have i done / not done sincce last scrum?

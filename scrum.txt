@@ -1,31 +1,34 @@
-<<<<<<< HEAD
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-Azam
-3/11/2017
-1.I created the database in phpmyadmin,I wrote the proposal.
-2.I have to finalize the pages and create the Login page.
-3.I have to check my Databases with teacher,asking about admin in  seprate table or in user table.
-=======
->>>>>>> 
+
 
 date and name
 1. what have i done / not done sincce last scrum?
 2. what will i do from now until next scrum?
 3. where do i need help from my teammate, teacher, or internet?
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+
+2/11/2017
+1.I created the database in phpmyadmin,I wrote the proposal.
+2.I have to finalize the pages and create the Login page.
+3.I have to check my Databases with teacher,asking about admin in  seprate table or in user table.
+=======
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam 
 3/11/2017
 1. what have i done / not done sincce last scrum?
--I created the Database in phpmyadmin.
--I wrote the proposal.
+-I modified the Database ..
 -I created the trello.
 2. what will i do from now until next scrum?
 -I have to implement all boards in trello.
--I have to implement first page
+-I have to implement some pages.
 3. where do i need help from teacher, or internet?
 -I have to check my databases with teache,asking about admin in seprate table or in user table.
 -I have to search how storage web sites work!
 
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 Azam
 4/11/2017
 1.I modified the database,I created some borads in trello.
@@ -35,13 +38,60 @@ Secure file:
 $secretdir = md5(date("s-u"));
 echo $secretdir;
 http://sandbox.onlinephpfunctions.com/
-<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 Azam
-6/11/2017
-1.I created the share page in HTML.I wrote two function for filetype and file zise.
-1.I have to search for some secrity issues
-3.Ask teacher for errors in filetype function
+5/11/2017
+1.I created the Home page in HTML.
+1.I'll implement share files page .
+3.Ask teacher how to create a class  in PHP.
 Secure file:
 $secretdir = md5(date("s-u"));
 echo $secretdir;
 http://sandbox.onlinephpfunctions.com/
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+6/11/2017
+1.I created the share page in HTML.
+1.I'll implement file type for upload.
+3.Ask teacher for error in function filetype in PHP.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Azam
+7/11/2017
+1.I implement filesize function in HTML.
+1.I'll see why it doesn't work,i have to find how function works in slim platform?
+3.I'll see one tutorial to implement multiple Folder.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+8/11/2017
+1.I implement styles for homepage,login,register and jquery.
+1.I'll add some parts like serach and language to the home page.
+3.I'll see how to store folder in database.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+9/11/2017
+1.I created search page and add code but it doesn;t work.
+1.I have to finish upload file .
+3.I'll search more to find better solution.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+10/11/2017
+1.I modified styles and add some picture.
+1.I have to finish upload file .
+3.I'll search more to find better solution.
+
+
+
+
+
+
+
+
+
+

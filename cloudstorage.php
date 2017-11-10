@@ -123,7 +123,7 @@ $app->post('/register', function() use ($app) {
         $app->render('register_success.html.twig');
     }
 });
-//////////////Upload File////////////
+/////////////////Upload File////////////////
 
 $app->get('/share', function() use ($app, $log) {
     $app->render('share.html.twig');

@@ -28,10 +28,10 @@ $view->setTemplatesDirectory(dirname(__FILE__) . '/templates');
 $log = new Logger('mail');
 $log->pushHandler(new StreamHandler('logs/everything.log', Logger::WARNING));
 $log->pushHandler(new StreamHandler('logs/error.log', Logger::WARNING));
-  
 
-if(!isset($_SESSION['user'])){    
-    $_SESSION['user']=array();
+
+if (!isset($_SESSION['user'])) {
+    $_SESSION['user'] = array();
 }
 $app->get('/logout', function() use ($app) {
     $_SESSION['user'] = array();
@@ -41,15 +41,15 @@ $app->get('/login', function() use ($app) {
     $app->render('login.html.twig');
 });
 $app->post('/login', function() use ($app) {
-    
-$email = $app->request()->post('email');
-$password = $app->request()->post('pass');
-$row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
+
+    $email = $app->request()->post('email');
+    $password = $app->request()->post('pass');
+    $row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
     $error = false;
     if (!$row) {
         $error = true; // user not found
     } else {
-        if (password_verify($password, $row['password'])== FALSE) {
+        if (password_verify($password, $row['password']) == FALSE) {
             $error = true; // password invalid
         }
     }
@@ -58,12 +58,11 @@ $row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
     } else {
         unset($row['password']);
         $_SESSION['user'] = $row;
-        $app->render('login_success.html.twig',array('userSession' => $_SESSION['user']));
+        $app->render('login_success.html.twig', array('userSession' => $_SESSION['user']));
     }
 });
 $app->get('/', function() use ($app) {
-     $app->render('index.html.twig',array('userSession' => $_SESSION['user']));
- 
+    $app->render('index.html.twig', array('userSession' => $_SESSION['user']));
 });
 /* * ****************** check email if registered *********************** */
 $app->get('/isemailregistered/:email', function($email)use($app) {
@@ -123,108 +122,17 @@ $app->post('/register', function() use ($app) {
         DB::insert('users', array('name' => $name, 'email' => $email, 'password' => $passEnc));
         $app->render('register_success.html.twig');
     }
-    
-//    //////////////Upload File/////
-//   
-//
-//    //
-//   
-//    
-// //Load the settings
-//require_once("share.php");
-// 
-//$message = "";
-////Has the user uploaded something?
-//if(isset($_FILES['file']))
-//{
-//$target_path = Settings::$uploadFolder;
-//$target_path = $target_path . time() . '_' . basename( $_FILES['file']['name']);
-//}
-////Check the password to verify legal upload
-//if($_POST['password'] != Settings::$password)
-//{
-//    $message = "Invalid Password!";
-//}
-//else
-//{
-//    //Try to move the uploaded file into the designated folder
-//        if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
-//            $message = "The file ".  basename( $_FILES['file']['name']). 
-//            " has been uploaded";
-//        } else{
-//            $message = "There was an error uploading the file, please try again!";
-//        }
-//    }
-//if(strlen($message) > 0)
-//{
-//    $message = '<p class="error">' . $message . '</p>';
-//}
-////** LIST UPLOADED FILES **/
-//$uploaded_files = "";
-// 
-////Open directory for reading
-//$dh = opendir(Settings::$uploadFolder);
-////LOOP through the files
-//while (($file = readdir($dh)) !== false) 
-//{
-//    if($file != '.' && $file != '..')
-//{
-//
-//$filename = Settings::$uploadFolder . $file;
-//$parts = explode("_", $file);
-//$size = formatBytes(filesize($filename));
-//$added = date("m/d/Y", $parts[0]);
-//$origName = $parts[1];
-//$filetype = getFileType(substr($file, strlen($file) - 3));
-//$uploaded_files .= "<li class=\"$filetype\"><a href=\"$filename\">$origName</a> $size - $added</li>\n";
-//}
-//}
-//closedir($dh);
-//if(strlen($uploaded_files) == 0)
-//{
-//    $uploaded_files = "<li><em>No files found</em></li>";
-//}
-//function getFileType($extension)
-//{
-//    $images = array('jpg', 'gif', 'png', 'bmp');
-//    $docs   = array('txt', 'rtf', 'doc');
-//    $apps   = array('zip', 'rar', 'exe');
-//     
-//    if(in_array($extension, $images)) return "Images";
-//    if(in_array($extension, $docs)) return "Documents";
-//    if(in_array($extension, $apps)) return "Applications";
-//    return "";
-//}
-//function formatBytes($bytes, $precision = 2) { 
-//    $units = array('B', 'KB', 'MB', 'GB', 'TB'); 
-//    
-//    $bytes = max($bytes, 0); 
-//    $pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
-//    $pow = min($pow, count($units) - 1); 
-//    
-//    $bytes /= pow(1024, $pow); 
-//    
-//    return round($bytes, $precision) . ' ' . $units[$pow]; 
-//}
-    $app->get('/share', function() use ($app) {
+});
+//////////////Upload File////////////
+
+$app->get('/share', function() use ($app, $log) {
     $app->render('share.html.twig');
 });
-$app->post('/share', function() use ($app) {
-    
-    });
-    
-///////Search/////////////////
-    /* Search */
-$app->get('/search', function() use ($app, $log) {
-    $app->render('searchresults.html.twig');
-});
-$app->post('/search', function() use ($app, $log) {
-    $searchTerm = $app->request()->post('searchTerm');
-    $values = array('searchTerm' => $searchTerm);
-    
-    $app->render('searchresults.html.twig', array('v' => $values));
-});
-    
+$app->post('/share', function() use ($app, $log) {
+    $filename = $app->request()->post('filename');
+    $values = array('filename' => $filename);
+
+    $app->render('share.html.twig', array('v' => $values));
 });
 
 $app->run();

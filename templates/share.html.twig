@@ -1,39 +1,12 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Tozai Hotel: Reservations</title>
-<link href="styles/style.css" rel="stylesheet" type="text/css">
-<!--[if lte IE 8]>
-
-<link href="styles/desktop.css" rel="stylesheet" type="text/css">
-
-<![endif]-->
-</head>
-
-<body>
-<div id="wrapper">
-  <div id="header" role="banner">
-    <h1>Espadana Storage</h1>
-  </div>
-  <ul id="nav" role="navigation">
-    <li><a href="/login">Home</a></li>
-    <li><a href="/share">Services</a></li>
-    <li><a href="Contact">Contact us</a></li>
-    <li><a href="Buy">How to Buy</a></li>
-    <li><a href="register.html">New Account</a></li>
-   
-  </ul>
-  <div class="content-medium" role="main">
-   
-
-
-    <form method="post" id="uploadForm">
+{# empty Twig template #}
+{% extends "master.html.twig" %}
+{% block content %}
+{% block title %}upload File{% endblock %}
+  
+  <form method="post" id="uploadForm">
         
         <div id="container">
-            <h1>File Storage</h1>
-
+        
             <fieldset>
                 <legend>Add a new file to the storage</legend>
                 <form method="post" action="index.php" enctype="multipart/form-data">
@@ -64,143 +37,9 @@
             </fieldset>
       <div id="footer" role="contentinfo">
     <p>Espadana Storage, Canada</p>
-    
   </div>
 </div>
-<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
-<script>
-$(function() {
-	// initialize variable for date parts
-	var dateParts;
-	
-	// create object for select menus
-	function initMenus() {
-		var menus = {};
-		menus.arr_month = $('#arrival_month');
-		menus.arr_date = $('#arrival_date');
-		menus.arr_year = $('#arrival_year');
-		menus.dep_month = $('#departure_month');
-		menus.dep_date = $('#departure_date');
-		menus.dep_year = $('#departure_year');
-		return menus;
-	}
-	
-	// set all parts of a specific date
-	function setValues(dateParts, menu, theDate) {
-		// advance the date by one day for the departure menu
-		if (menu == 'dep') {
-			theDate = getNextDay(theDate);
-		}
-		// get the individual date parts
-		var m = theDate.getMonth() + 1,
-		    d = theDate.getDate(),
-		    y = theDate.getFullYear(),
-			today = new Date();
-		// adjust the options for the date and year menus
-		populateDate(dateParts, menu, m, y);
-		populateYear(dateParts, menu, today.getFullYear());
-		// set the values for each select menu
-		dateParts[menu + '_month'].val(m);
-		dateParts[menu + '_date'].val(d);
-		dateParts[menu + '_year'].val(y);
-	}
-	
-	// return Date object for next day
-	function getNextDay(date) {
-		return new Date(date.getTime() + (1000*60*60*24));
-	}
-	
-	// limit year to current and following years
-	function populateYear(dateParts, menu, yr) {
-		dateParts[menu + '_year'].html('<option>' + yr + '</option>' +
-		          '<option>' + (yr + 1) + '</option>');
-	}
-	
-	// adjust date options according to month
-	function populateDate(dateParts, menu, mon, yr) {
-		var len = getNumDays(mon, yr),
-		    html = '';
-		for (var i = 1; i <= len; i+=1) {
-			html += '<option>' + i + '</option>';
-		}
-		dateParts[menu + '_date'].html(html);
-	}
-	
-	// return number of days in selected month
-	function getNumDays(mon, yr) {
-		var num_days = 31;
-		if (mon == 4 || mon == 6 || mon == 9 || mon == 11) {
-			num_days = 30;
-		} else if (mon == 2) {
-			// if leap year, February has 29 days
-			if (yr % 400 == 0 || (yr % 4 == 0 && yr % 100 != 0)) {
-				num_days = 29;
-			} else {
-				num_days = 28;
-			}
-		}
-		return num_days;
-	}
-
-	// change handler for select menus
-	function resetDates(e) {
-		// find out whether the arrival or departure date was changed, and get its value
-		var dateParts = e.data.dateParts,
-		    menu = e.data.menu,
-		    m = dateParts[menu + '_month'].val(),
-			d = dateParts[menu + '_date'].val(),
-			y = dateParts[menu + '_year'].val(),
-			num_days = getNumDays(m, y),
-			today = new Date(),
-			selected, arrival, departure;
-		// make sure the date menu displays the correct number of days
-		populateDate(dateParts, menu, m, y);
-		// if the month contains fewer days than the currently selected value,
-		// reset the date menu to the last day of the month
-		d = (d <= num_days) ? d : num_days;
-		dateParts[menu + '_date'].val(d);
-		// create a Date object for the newly selected date
-		selected = new Date(y, m-1, d);
-		arrival = new Date(dateParts.arr_year.val(), dateParts.arr_month.val()-1, dateParts.arr_date.val());
-		departure = new Date(dateParts.dep_year.val(), dateParts.dep_month.val()-1, dateParts.dep_date.val());
-		// if changes were made to the arrival date
-		if (menu == 'arr') {
-			// if the arrival date is earlier than today, reset to today's date
-			if (selected < today) {
-				setValues(dateParts, 'arr', today);
-				setValues(dateParts, 'dep', today);
-			}
-			if (departure <= selected) {
-				// set the departure date to the following day
-				setValues(dateParts, 'dep', arrival);
-			}
-		} else {
-			// if the selected departure date is today or earlier,
-			// reset both dates to their default values
-			if (selected <= today) {
-				setValues(dateParts, 'arr', today);
-				setValues(dateParts, 'dep', today);
-			} else if (selected <= arrival) {
-				// if the selected departure date is the same as the arrival date
-				// or earlier, reset the departure to one day after arrival
-				setValues(dateParts, 'dep', arrival);
-			}
-		}		
-	}
-	
-	// run the script
-	dateParts = initMenus();
-	// set the initial menu values to today and tomorrow
-	setValues(dateParts, 'arr', new Date());
-	setValues(dateParts, 'dep', new Date());
-	
-	// bind the resetDates function as the onchange event handler to each select menu
-	$('#arrival_date, #arrival_month, #arrival_year').change({dateParts: dateParts, menu: 'arr'}, resetDates);
-	$('#departure_date, #departure_month, #departure_year').change({dateParts: dateParts, menu: 'dep'}, resetDates);
-	
-});
-</script>
-</body>
-</html>
+</script><script type="text/javascript" src="/js/jquery-1.5.2.min.js"></script>
+ {% endblock %} 
 
 

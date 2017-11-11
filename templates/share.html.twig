@@ -1,22 +1,16 @@
 {# empty Twig template #}
 {% extends "master.html.twig" %}
 {% block content %}
-{% block title %}upload File{% endblock %}
+{% block title %}{% endblock %}
   
-  <form method="post" enctype="multipart/form-data">
-    <!-- upload of a single file -->
-        <input type="file" name="example3[]" multiple="multiple"/>
-    </p>
-
-    <p>
-        <input type="submit"/>
-    </p>
-</form>
-      <div id="footer" role="contentinfo">
-    <p>Espadana Storage, Canada</p>
-  </div>
-</div>
-</script><script type="text/javascript" src="/js/jquery-1.5.2.min.js"></script>
+  
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+            <label>Select file to upload:</label>
+            <input type="file" name="newfile">
+            <button type="submit">Upload</button>
+        </form>
+    
+      
  {% endblock %} 
 
 

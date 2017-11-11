@@ -1,30 +1,10 @@
+{% extends 'master.html.twig' %}
 
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Stroage System Managment</title>
+{% block title %}AccessDenied | Slimtodo{% endblock %}
 
-<!--[if lte IE 8]>
+{% block content %}
 
-<link href="styles/desktop.css" rel="stylesheet" type="text/css">
-<![endif]-->
-</head>
 
-<body>
-<div id="wrapper">
-  <div id="header" role="banner">
-    <h1>Espadana Storage</h1>
-  </div>
-  <ul id="nav" role="navigation">
-    <li><a href="/login">My Account</a></li>
-    <li><a href="/share">Services</a></li>
-    <li><a href="/contact">Contact us</a></li>
-    <li><a href="/paypall">How to Buy</a></li>
-    <li><a href="/register">New Account</a></li>
-   
-  </ul>
   <div id="garden" class="content-medium" role="main">
     <h2>Safe, Secure & Flexible Storage</h2>
     <p>GoogleCloud Storage is unified object storage for developers and enterprises, from live data serving to data analytics/ML to data archiving..</p>
@@ -45,12 +25,7 @@
       <h3><li><a href="Register for a free trial">Register for a free trial</a></li></h3>
      <h3><li><a href="Search">Search</a></li></h3>
   </div>
- <div id="footer" role="contentinfo">
-    <p>Espadana Storage, Canada</p>
-    
-  </div>
-</div>
-    <script type="text/javascript" src="/js/jquery-1.5.2.min.js"></script>
-</body>
-</html>
+ 
+
+{% endblock %}
  

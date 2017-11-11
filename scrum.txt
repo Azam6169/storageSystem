@@ -85,6 +85,16 @@ Azam
 1.I modified styles and add some picture.
 1.I have to finish upload file .
 3.I'll search more to find better solution.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Azam
+11/11/
+
+1.I rewite all Html file and change forms,I modified some style.
+2.I have to find why I can't see the error message in register page and login page
+3.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 

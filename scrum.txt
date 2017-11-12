@@ -99,8 +99,9 @@ Azam
 12/11/
 
 1.I modify register form and find why it doesn't show the errors,it works property.
-2.I have to find why log in page doesn't work.
+2.I have to find why log in page doesn't work.//I find it.the problem was in users table,it took cuple of hours.(
 3.
+
 
 
 

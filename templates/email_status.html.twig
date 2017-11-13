@@ -1,0 +1,22 @@
+{% extends "master.html.twig" %}
+
+{% block title %}{{"Email Sending Status"|trans}}{% endblock %}
+
+
+{% block content %}
+    {% if failed %}
+        <div class="container" id="loginContainer">
+            <h1>{{"We encountered a problem sending you an email. Try again later"|trans}}</h1>
+            <a class="btn btn-lg btn-primary btn-block linkButtons" href="/login">{{"Continue"|trans}}</a>
+            <div class="row"> </div>
+        </div>
+    {% else %}
+        <div class="container" id="loginContainer">
+            <h1>{{"Email sent successfully"|trans}}</h1>
+            <a href="/login">{{"Check your password and try to login again"|trans}}</a><br><br>
+            <a class="btn btn-lg btn-primary btn-block linkButtons" href="/">{{"Continue"|trans}}</a>
+
+            <div class="row"> </div>
+        </div>
+    {% endif %}
+{% endblock %}

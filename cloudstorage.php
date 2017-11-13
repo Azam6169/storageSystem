@@ -38,10 +38,9 @@ $app->get('/', function() use ($app) {
     echo "This is storage project";
 });
 // create a log channel
-<<<<<<< HEAD
 
-=======
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+
+
 $log = new Logger('mail');
 $log->pushHandler(new StreamHandler('logs/everything.log', Logger::WARNING));
 $log->pushHandler(new StreamHandler('logs/error.log', Logger::WARNING));
@@ -140,9 +139,9 @@ $app->post('/register', function() use ($app) {
         DB::insert('users', array('name' => $name, 'email' => $email, 'password' => $passEnc));
         $app->render('register_success.html.twig');
     }
-<<<<<<< HEAD
+
     
-=======
+
     //////////////Upload File/////
     $app->get('/upload', function() use($app){
 
@@ -232,7 +231,7 @@ function formatBytes($bytes, $precision = 2) {
     
     return round($bytes, $precision) . ' ' . $units[$pow]; 
 }
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+
 });// create a log channel
 $log = new Logger('mail');
 $log->pushHandler(new StreamHandler('logs/everything.log', Logger::WARNING));
@@ -270,7 +269,7 @@ $row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
         $_SESSION['user'] = $row;
         $app->render('login_success.html.twig',array('userSession' => $_SESSION['user']));
     }
-<<<<<<< HEAD
+
 });
 $app->get('/', function() use ($app) {
      $app->render('index.html.twig',array('userSession' => $_SESSION['user']));
@@ -281,8 +280,8 @@ $app->get('/isemailregistered/:email', function($email)use($app) {
     $row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
     echo!$row ? "" : '<span style="color:red; font-weight:bold;">Email already registered.</span>';
 });
-=======
-});
+
+
 $app->get('/', function() use ($app) {
      $app->render('index.html.twig',array('userSession' => $_SESSION['user']));
  
@@ -292,7 +291,7 @@ $app->get('/isemailregistered/:email', function($email)use($app) {
     $row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
     echo!$row ? "" : '<span style="color:red; font-weight:bold;">Email already registered.</span>';
 });
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+
 /* * ****************** check username if taken *********************** */
 $app->get('/isusernametaken/:username', function($name)use($app) {
     $row = DB::queryFirstRow("SELECT * FROM users WHERE name=%s", $name);
@@ -345,7 +344,7 @@ $app->post('/register', function() use ($app) {
         DB::insert('users', array('name' => $name, 'email' => $email, 'password' => $passEnc));
         $app->render('register_success.html.twig');
     }
-<<<<<<< HEAD
+
 //////////////Upload File//////////////
     $app->get('/share', function() use($app){
 
@@ -355,7 +354,7 @@ $app->post('/register', function() use ($app) {
 });
 
 $app->post('/share', function() use($app) {
-=======
+
     //////////////Upload File/////
     $app->get('/upload', function() use($app){
 
@@ -367,7 +366,7 @@ $app->post('/share', function() use($app) {
 
 
 $app->post('/upload', function() use($app) {
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+
    });
     
  //Load the settings
@@ -414,33 +413,33 @@ $filename = Settings::$uploadFolder . $file;
 $parts = explode("_", $file);
 $size = formatBytes(filesize($filename));
 $added = date("m/d/Y", $parts[0]);
-<<<<<<< HEAD
+
 $originName = $parts[1];
-=======
+
 $origName = $parts[1];
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+
 $filetype = getFileType(substr($file, strlen($file) - 3));
 $uploaded_files .= "<li class=\"$filetype\"><a href=\"$filename\">$origName</a> $size - $added</li>\n";
 }
 }
-<<<<<<< HEAD
+
 //Secure file:
 $secretdir = md5(date("s-u"));
 echo $secretdir;
-=======
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+
+
 closedir($dh);
 if(strlen($uploaded_files) == 0)
 {
     $uploaded_files = "<li><em>No files found</em></li>";
 }
-<<<<<<< HEAD
+
 function FormatSize($format){
     $unit =array('B','KB','MB','GB','TB');
     
 }
-=======
->>>>>>> 580c6d13141af52209fe501f8986d7d98a36f5bc
+
+
 function getFileType($extension)
 {
     $images = array('jpg', 'gif', 'png', 'bmp');

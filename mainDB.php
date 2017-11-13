@@ -25,10 +25,12 @@ $view->parserOptions = array(
 $view->setTemplatesDirectory(dirname(__FILE__) . '/templates');
 
 // create a log channel
-$log = new Logger('mail');
-$log->pushHandler(new StreamHandler('logs/everything.log', Logger::WARNING));
-$log->pushHandler(new StreamHandler('logs/error.log', Logger::WARNING));
+$log = new Logger('main');
+$log->pushHandler(new StreamHandler('logs/everything.log', Logger::DEBUG));
+$log->pushHandler(new StreamHandler('logs/errors.log', Logger::ERROR));
 
+require_once 'cloudstorage.php';
+require_once 'account.php';
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();
@@ -40,4 +42,3 @@ $app->get('/', function() use ($app) {
  
 });
 $app->run();
-

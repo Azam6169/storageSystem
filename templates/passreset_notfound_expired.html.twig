@@ -1,0 +1,16 @@
+{% extends "master.html.twig" %}
+
+
+{% block title %}Token Expired{% endblock %}
+{% block css %} 
+    <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,100,500'>
+    <link rel='stylesheet prefetch' href='https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Slab:400,700,300,100'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+{% endblock %}
+{% block content %}
+
+    <p> Password reset Token invalid, not found, or expired.
+        <a href="/">Click to continue</a>.</p>
+
+
+{% endblock %}

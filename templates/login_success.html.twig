@@ -1,9 +1,8 @@
+{# empty Twig template #}
 {% extends "master.html.twig" %}
 
-{% block title %}Login Successful{% endblock %}
+{% block title %}Index{% endblock %}
 
-{% block login %}
-    <p>Login successful, <a href="/">click to continue</a>.</p>
+{% block content %}
+<p>Login successful,  {{userSession.name}} <a href="/yourdrive">click to continue</a>.</p>
 {% endblock %}
-    
-

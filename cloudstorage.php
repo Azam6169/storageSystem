@@ -276,31 +276,6 @@ $app->post('/share', function() {
     $destinationDir = 'uploads';
     
     move_uploaded_file($file['tmp_name'], $destinationDir . '/' . $uniqueName .'.' . $ext);
-    die();
-    //$directory = $this->get('upload_directory');
-    
-    /**
-
-    $uploadedFiles = $request->getUploadedFiles();
-
-    foreach ($uploadedFiles['example3'] as $uploadedFile) {
-        if ($uploadedFile->getError() === UPLOAD_ERR_OK) {
-            $filename = moveUploadedFile($directory, $uploadedFile);
-            $response->write('uploaded ' . $filename . '<br/>');
-        }
-    }
-
-   **/
+   
 });
-function moveUploadedFile($directory, UploadedFile $uploadedFile)
-{
-    $extension = pathinfo($uploadedFile->getClientFilename(), PATHINFO_EXTENSION);
-    $basename = bin2hex(random_bytes(8)); // see http://php.net/manual/en/function.random-bytes.php
-    $filename = sprintf('%s.%0.8s', $basename, $extension);
-
-    $uploadedFile->moveTo($directory . DIRECTORY_SEPARATOR . $filename);
-
-    return $filename;
-}
-
 $app->run();

@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/C:/xampp/htdocs/PHP-project/mainDB.php</file>
             <file>file:/C:/xampp/htdocs/PHP-project/cloudstorage.php</file>
-=======
-            <file>file:/C:/xampp/htdocs/PHP-Project/cloudstorage.php</file>
-            <file>file:/C:/xampp/htdocs/PHP-Project/mainDB.php</file>
->>>>>>> 5f3b5d292cd42e5e0193b1261fc1977548065d5d
+            <file>file:/C:/xampp/htdocs/PHP-project/account.php</file>
         </group>
     </open-files>
 </project-private>

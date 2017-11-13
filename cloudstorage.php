@@ -251,22 +251,9 @@ $app->post('/share', function() {
     $destinationDir = 'uploads';
     
     move_uploaded_file($file['tmp_name'], $destinationDir . '/' . $uniqueName .'.' . $ext);
-    die();
-    //$directory = $this->get('upload_directory');
-    
-    /**
-
-    $uploadedFiles = $request->getUploadedFiles();
-
-    foreach ($uploadedFiles['example3'] as $uploadedFile) {
-        if ($uploadedFile->getError() === UPLOAD_ERR_OK) {
-            $filename = moveUploadedFile($directory, $uploadedFile);
-            $response->write('uploaded ' . $filename . '<br/>');
-        }
-    }
-
-   **/
+   
 });
+<<<<<<< HEAD
 function moveUploadedFile($directory, UploadedFile $uploadedFile)
 {
     $extension = pathinfo($uploadedFile->getClientFilename(), PATHINFO_EXTENSION);
@@ -279,3 +266,6 @@ function moveUploadedFile($directory, UploadedFile $uploadedFile)
 }
 
 
+=======
+$app->run();
+>>>>>>> 8810f52b6be4527dd2c7801eb2dcb9a8f774dffe

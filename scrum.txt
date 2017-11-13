@@ -102,6 +102,17 @@ Azam
 2.I have to find why log in page doesn't work.//I find it.the problem was in users table,it took cuple of hours.(
 3.
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+13/11/
+
+1.I log in page works property.(the problem was in the table for length of password,I create Drive page.I created From and style for drive page.
+ The upload file works.
+2.I have to do reset password.
+3.I'll ask teacher about share and folder,how can I created the folder(we have create a directory for folder or have to create a folder in upload)
+
+
+
 
 
 

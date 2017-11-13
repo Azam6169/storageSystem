@@ -20,7 +20,7 @@ h1{
 
 #loginForm, #registerForm {
     width: 600px;
-    margin: 10px auto;
+    margin: 0px auto;
     border: 1px solid #e6eef6;
     background-color: #ffffff;
 }
@@ -67,14 +67,14 @@ img.avatar {
 
 span.registerNow{
     float: right;
-    padding-top: 100px;
+    padding-top: 16px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
    span.registerNow {
        display: block;
-       float: left;
+       float: none;
     }
     .cancelbtn {
        width: 100%;

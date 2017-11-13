@@ -1,17 +1,20 @@
-{# empty Twig template #}
 {% extends "master.html.twig" %}
+
+
+{% block title %}Login{% endblock %}
+
 {% block content %}
-{% block title %}{% endblock %}
- 
+
+
                     <form method="post" id="registerForm">
                         <div class="container">
                     <label><b>E-mail</b></label>
-                    <input type="text" placeholder="Enter email" name="email" required>
+                    <input type="email" placeholder="Enter email" name="email" required>
 
                     <label><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <input type="password" placeholder="Enter Password" name="pass" required>
 
-                    <button type="submit">Login</button>
+                     <input type="submit" value="Login" style="height:50px;width:80px" >
 
                     </div>
                 

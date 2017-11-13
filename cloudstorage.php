@@ -37,19 +37,20 @@ $app->get('/logout', function() use ($app) {
     $_SESSION['user'] = array();
     $app->render('logout.html.twig');
 });
+/* * ****************** LogIn*********************** */
 $app->get('/login', function() use ($app) {
     $app->render('login.html.twig');
 });
-$app->post('/login', function() use ($app) {
 
+$app->post('/login', function() use ($app) {
     $email = $app->request()->post('email');
-    $password = $app->request()->post('pass');
+    $pass = $app->request()->post('pass');
     $row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
     $error = false;
     if (!$row) {
         $error = true; // user not found
     } else {
-        if (password_verify($password, $row['password']) == FALSE) {
+        if (password_verify($pass, $row['password']) == FALSE) {
             $error = true; // password invalid
         }
     }
@@ -61,13 +62,13 @@ $app->post('/login', function() use ($app) {
         $app->render('login_success.html.twig', array('userSession' => $_SESSION['user']));
     }
 });
-$app->get('/', function() use ($app) {
-    $app->render('index.html.twig', array('userSession' => $_SESSION['user']));
-});
+
+
 /* * ****************** check email if registered *********************** */
 $app->get('/isemailregistered/:email', function($email)use($app) {
     $row = DB::queryFirstRow("SELECT * FROM users WHERE email=%s", $email);
     echo!$row ? "" : '<span style="color:red; font-weight:bold;">Email already registered.</span>';
+    
 });
 /* * ****************** check username if taken *********************** */
 $app->get('/isusernametaken/:username', function($name)use($app) {
@@ -126,18 +127,39 @@ $app->post('/register', function() use ($app) {
 /////////////////Upload File////////////////
 
 $app->get('/share', function() use ($app, $log) {
+    
     $app->render('share.html.twig');
 });
+/**
 $app->post('/share', function() use ($app, $log) {
+    echo 'here'; die();
     $filename = $app->request()->post('filename');
     $values = array('filename' => $filename);
-
-    $app->render('share.html.twig', array('v' => $values));
     
-$container['upload_directory'] = '/uploads';
+    $app->render('share.html.twig', array('v' => $values));
+});
+**/
 
-$app->post('/', function(Request $request, Response $response) {
-    $directory = $this->get('upload_directory');
+$container['upload_directory'] = '/uploads';
+$app->post('/books', function () {
+    //Create book
+    echo 'helloo!'; die();
+});
+$app->post('/share', function() {    
+    $file = $_FILES['newfile'];
+    //var_dump($file);
+    $originalName = $file['name'];
+    $ext = pathinfo($originalName, PATHINFO_EXTENSION);
+    //var_dump($ext);
+    //die();
+    $uniqueName =  md5($file['tmp_name'] . time());
+    $destinationDir = 'uploads';
+    
+    move_uploaded_file($file['tmp_name'], $destinationDir . '/' . $uniqueName .'.' . $ext);
+    die();
+    //$directory = $this->get('upload_directory');
+    
+    /**
 
     $uploadedFiles = $request->getUploadedFiles();
 
@@ -147,7 +169,9 @@ $app->post('/', function(Request $request, Response $response) {
             $response->write('uploaded ' . $filename . '<br/>');
         }
     }
-    
+
+   **/
+});
 function moveUploadedFile($directory, UploadedFile $uploadedFile)
 {
     $extension = pathinfo($uploadedFile->getClientFilename(), PATHINFO_EXTENSION);
@@ -158,7 +182,5 @@ function moveUploadedFile($directory, UploadedFile $uploadedFile)
 
     return $filename;
 }
-
-});
 
 $app->run();

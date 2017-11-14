@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">     
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+
+ <title>Stroage System Managment</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="/styles/tozai_mq.css" rel="stylesheet" type="text/css">
+        
+    {% block headextra %}{% endblock %}
+ <!--[if lte IE 8]>
+
+<link href="styles/desktop.css" rel="stylesheet" type="text/css">
+<![endif]-->
+    </head>
+<body>
+<div id="wrapper">
+  <div id="header" role="banner">
+    <h1>Espadana Storage</h1>
+  </div>
+  <ul id="nav" role="navigation">
+    <li><a href="/login">My Account</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/contact">Contact us</a></li>
+    <li><a href="/paypall">How to Buy</a></li>
+    <li><a href="/register">New Account</a></li>
+   
+  </ul>
+
+    <div id="centeredContent">
+            {% block content %}{% endblock %}
+    </div>
+    <div id="footer" role="contentinfo">
+    <p>Espadana Storage, Canada</p>
+    
+  </div>                   
+</div>    
+</body>
+</html>

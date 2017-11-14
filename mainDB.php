@@ -12,6 +12,8 @@ DB::$user = 'cp4809_storage';
 DB::$encoding = 'utf8';
 
 DB::$password = 'OzrAns;t}tL4';
+DB::$nonsql_error_handler='non_sql_hundler';
+DB::$error_handler = 'sql_error_handler';
 // Slim creation and setup
 $app = new \Slim\Slim(array(
     'view' => new \Slim\Views\Twig()
@@ -41,4 +43,4 @@ $app->get('/', function() use ($app) {
      $app->render('index.html.twig',array('userSession' => $_SESSION['user']));
  
 });
-$app->run();
+

@@ -1,0 +1,115 @@
+@charset "utf-8";
+#wrapper {
+	background-image: url(../images/basin_bg_phone.jpg);
+	background-size:contain;
+	width: 100%;
+}
+#header h1 {
+	font-size: 36px;
+	margin-bottom: 0px;
+	padding-left: 90px;
+	padding-top: 5px;
+}
+/* Basic styles */
+h2 {
+	font-size:24px;
+}
+.floatleft, .floatright {
+	float:none;
+	max-width: 290px;
+	margin:0.5em auto;
+	display:block;
+}
+/* Main navigation */
+#nav {
+	width: 308px;
+	height: 95px;
+	margin: 0 auto 5px auto;
+}
+#nav li a {
+	width: 136px;
+	margin: 0 6px 2px 6px;
+	padding: 5px 2px;
+}
+#nav li:last-child a {
+	margin-left: 74px;
+}
+/* Main content on index page */
+#hero {
+	width: auto;
+	margin: 5px;
+	padding: 10px;
+	min-height: 0;
+	height:auto;
+}
+#hero h2 {
+	padding-right: 10px;
+	font-size: 24px;
+}
+#hero p {
+	padding-right: 0;
+}
+/* Content containers on other pages */
+.content-wide, .content-medium, .aside {
+	margin: 0 5px 5px 5px;
+	padding:10px;
+	width:auto;
+	float:none;
+}
+/* Form elements */
+form {
+	margin-left:10px;
+}
+label {
+	width: 100px;
+}
+label[for=title] {
+	float:left;
+}
+datalist {
+	float:left;
+}
+datalist span {
+	display:block;
+	margin:5px;
+}
+input[name=title] {
+	display:block;
+	clear:left;
+	margin-left:105px;
+}
+select:last-of-type {
+	display:block;
+	margin-left:105px;
+	margin-top:5px;
+}
+input[type=submit] {
+	margin-left: 50px;
+}
+fieldset label {
+	width:80px;
+	padding-left:30px;
+}
+/* Alternate rules for screens wider than 360px */
+@media screen and (min-width:360px) {
+	#header h1 {
+		padding-left:125px;
+	}
+	#nav {
+		margin-left:40px;
+	}
+	#hero {
+		width: 87%;
+		margin: 5px auto;
+	}
+	#hero p {
+		padding-right:0;
+	}
+	.floatright.img-large, img.floatleft, img.floatright {
+		width: 330px;
+	}
+	#adults {
+		margin-right:80px;
+	}
+	
+}

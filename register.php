@@ -1,30 +1,48 @@
 <?php
 
-if (false) {
-    $app = new \Slim\Slim();
-    $log = new Logger('main');
-}
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
+session_start();
 
-//$app->get('/test', function() use ($app) {
-//     $a = 2;
-//     $b = 5;
-//     $c = $a + $b;
-//     echo 'result = ' . $c;
-//     die();
-//});
+require_once 'vendor/autoload.php';
+
+DB::$dbName = 'cp4809_storage';
+DB::$user = 'cp4809_storage';
+DB::$encoding = 'utf8';
+
+DB::$password = 'OzrAns;t}tL4';
+DB::$nonsql_error_handler='non_sql_hundler';
+DB::$error_handler = 'sql_error_handler';
+// Slim creation and setup
+$app = new \Slim\Slim(array(
+    'view' => new \Slim\Views\Twig()
+        ));
+
+$view = $app->view();
+$view->parserOptions = array(
+    'debug' => true,
+    'cache' => dirname(__FILE__) . '/cache'
+);
+$view->setTemplatesDirectory(dirname(__FILE__) . '/templates');
 
 // create a log channel
+$log = new Logger('main');
+$log->pushHandler(new StreamHandler('logs/everything.log', Logger::DEBUG));
+$log->pushHandler(new StreamHandler('logs/errors.log', Logger::ERROR));
 
-//$log = new Logger('mail');
-//$log->pushHandler(new StreamHandler('logs/everything.log', Logger::WARNING));
-//$log->pushHandler(new StreamHandler('logs/error.log', Logger::WARNING));
-//  
-//$twig = $app->view()->getEnvironment();
-//$twig->addGlobal('usersession',$_SESSION['user']); 
-//if(!isset($_SESSION['user'])){    
-//    $_SESSION['user']=array();
-//}
+require_once 'cloudstorage.php';
+require_once 'account.php';
+
+if (!isset($_SESSION['user'])) {
+    $_SESSION['user'] = array();
+}
+// url/event handler go here
+
+$app->get('/', function() use ($app) {
+     $app->render('index.html.twig',array('userSession' => $_SESSION['user']));
+ 
+});
 
 $app->get('/logout', function() use ($app) {
     $_SESSION['user'] = array();
@@ -171,6 +189,8 @@ $app->post('/share', function() {
 
    **/
 });
+
+
 //function moveUploadedFile($directory, UploadedFile $uploadedFile)
 //{
 //    $extension = pathinfo($uploadedFile->getClientFilename(), PATHINFO_EXTENSION);
@@ -181,5 +201,5 @@ $app->post('/share', function() {
 //
 //    return $filename;
 //}
-
+//
 

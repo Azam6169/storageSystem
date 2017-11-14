@@ -33,6 +33,7 @@ $log->pushHandler(new StreamHandler('logs/errors.log', Logger::ERROR));
 
 require_once 'login.php';
 require_once 'account.php';
+require_once 'userlistfile.php';
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();

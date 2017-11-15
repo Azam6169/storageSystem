@@ -111,12 +111,12 @@ Azam
 2.I have to do reset password.
 3.I'll ask teacher about share and folder,how can I created the folder(we have create a directory for folder or have to create a folder in upload)
 
-
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 Azam
 14/11/
 
-1.Password reset done,errors in register page show.
+1.Password reset done,errors in register page is showing.
 
 2.I have to finish add/delete file for users
 3.I'll ask teacher about share and folder,how can I created the folder(we have create a directory for folder or have to create a folder in upload)

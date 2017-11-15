@@ -1,0 +1,13 @@
+{# empty Twig template #}
+{% extends "master.html.twig" %}
+{% block title %}Confirm delete{% endblock %}
+{% block content %}
+    <p><br>Are you sure you want to delete this file?</b></p>
+    <form action="/list" style="display:inline;">            
+        <input type="submit" value="Candel">
+    </form>
+    <form method="post" action="/file/delete/{{f.id}}" style="display:inline;">            
+        <input type="hidden" name="confirmed" value="true">
+        <input type="submit" value="Delete">
+    </form>    
+{% endblock %}

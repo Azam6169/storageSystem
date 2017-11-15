@@ -1,0 +1,22 @@
+{#{% extends "master.html.twig" %}#}
+{% block title %}Files list{% endblock %}
+{% block content %}
+    <p><a href="/file/add">Add Files</a><p>
+    <table border=1>
+        <tr><th>#</th><th>User Name</th><th>File Name</th><th>Folder Name</th><th>Action</th></tr>
+        {% for p in list %}
+                <tr class="{% if loop.index is odd %}rowodd{% else %}roweven{% endif %}">
+                    <td>{{p.name}}</td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.filename}}</td>
+                    <td>
+                        <a href="/file/delete/{{p.id}}">Delete</a>
+                        <a href="/file/edit/{{p.id}}">Edit</a>                         
+                    </td>
+                </tr>
+        {% else %}
+            <tr><td colspan="6"> You have no files</td></tr>
+        {% endfor %}
+    </table>         
+        
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "master.html.twig" %}
+
+{% block title %}File {% if isEditing %}update{% else %}add{% endif %}{% endblock %}
+
+{% block content %}  
+    <p>success</p>
+    <p>File {% if isEditing %}updated{% else %}added{% endif %}.
+        <a href="/list">Click to continue</a>.</p>
+{% endblock %}

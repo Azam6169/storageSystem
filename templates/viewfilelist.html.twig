@@ -1,7 +1,7 @@
 {#{% extends "master.html.twig" %}#}
-{% block title %}Files list{% endblock %}
+{% block title %}Files list View{% endblock %}
 {% block content %}
-    <p><a href="/file/add">Add Files</a><p>
+    <p><a href="/share/add">View Files</a><p>
     <table border=1>
         <tr><th>#</th><th>File Name</th><th>Unique Name</th><th>Action</th></tr>
         {% for p in list %}
@@ -11,7 +11,9 @@
                     <td>{{p.secretdir}}</td>
                     <td>
                         <a href="/file/delete/{{p.id}}">Delete</a>
-                        <a href="/file/edit/{{p.id}}">Edit</a>                         
+                        <a href="/file/edit/{{p.id}}">Edit</a>
+                        <a href="/file/edit/{{p.id}}">Edit</a> 
+                        
                     </td>
                 </tr>
         {% else %}

@@ -126,11 +126,30 @@ Azam
 15/11/
 1.I craeted the listfile,add/delte,accessdenied,add/edit success full, created the file php.
 
-2.I have to find error in add/edit page
+2.I have to find errors in add/edit page
 3.I'll ask teacher about share and folder,how can I created the folder(we have create a directory for folder or have to create a folder in upload)
 
 https://stackoverflow.com/questions/18216930/how-to-create-folder-with-php-code
 
+
+
+
+
+
+
+/files/:id - view file
+
+/files/:id/shares/list
+/files/:id/shares/add
+/files/:id/shares/remove/:shareId
+
+/files/list - list of my files and list of files shared with me
+/files/add
+/files/edit/:id
+/filed/delete/:id
+
+/////for choosing the user
+selectable list html
 
 
 

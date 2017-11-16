@@ -93,15 +93,15 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
         $app->render('/not_found.html.twig');
         return;
     }
-    //
+   
     $filename = $_FILES['filename'];
     $values = array('filename' => $filename);
     $errorList = array();
    
     //var_dump($file);
-    $originalName = $file['filename'];
+    $$filename = $file['filename'];
     
-    $ext = pathinfo($originalName, PATHINFO_EXTENSION);
+    $ext = pathinfo($$filename, PATHINFO_EXTENSION);
     //var_dump($ext);
     //die();
     $uniqueName =  md5($file['tmp_name'] . time());
@@ -110,7 +110,7 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
     move_uploaded_file($file['tmp_name'], $destinationDir . '/' . $uniqueName .'.' . $ext);
   
     //
-    $values = array('filename' => $originalName, 'secretdir' => $uniqueName);
+    $values = array('filename' => $filename, 'secretdir' => $uniqueName);
     $errorList = array();
     //
     

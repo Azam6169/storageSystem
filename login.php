@@ -64,10 +64,35 @@ $app->get('/yourdrive', function() use ($app, $log) {
 });
 /////////////////Upload File////////////////
 
-$app->get('/share', function() use ($app, $log) {
-    
-    $app->render('share.html.twig');
-});
+//$app->get('/share_chooseuser', function() use ($app, $log) {
+//    if (!$_SESSION['user'] ) {
+//        echo 'Access denied';
+//        return;
+//    }
+//    //
+//    $usersList = DB::query("SELECT * FROM users");
+//    $app->render('share_chooseuser.html.twig', array('list' => $usersList));
+//   
+//});
+//$app->post('/share_chooseuser', function() use ($app) {
+//    $username = $app->request()->post('name');
+//    $row = DB::queryFirstRow("SELECT * FROM files WHERE name=%s", $username );
+//    $error = false;
+//    if (!$row) {
+//        $error = true; // user not found
+//    } else {
+//        if (username_verify($username , $row['name']) == FALSE) {
+//            $error = true; // password invalid
+//        }
+//    }
+//    if ($error) {
+//        $app->render('share_chooseuser.html.twig', array('error' => true));
+//    } else {
+//        unset($row['name']);
+//        $_SESSION['user'] = $row;
+//        $app->render('share_chooseuser_success.html', array('userSession' => $_SESSION['user']));
+//    }
+//});
 /**
 $app->post('/share', function() use ($app, $log) {
     echo 'here'; die();

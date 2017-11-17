@@ -55,6 +55,7 @@ $app->post('/file/delete/:id', function($id) use ($app) {
     }
 });
 
+
 // Add-Edit File
 $app->get('/file/:op(/:id)', function($op, $id = -1) use ($app) {
     if (!$_SESSION['user'] ){ 
@@ -139,4 +140,42 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
     'op' => '(edit|add)',
     'id' => '\d+'
 )); // End of add-edit file
+
+////choose user
+
+$app->get('/file/chooseuser/:id', function($id) use ($app) {
+    if (!$_SESSION['user'] ) {
+        $app->render("access_denied.html.twig");
+        return;
+    }
+    if (!$_SESSION['user'] ) {
+        echo 'Access denied';
+        return;
+    }
+    //
+    $usersList = DB::query("SELECT * FROM users");
+     $app->render('file_chooseuser.html.twig', array('list' => $usersList));
+});
+
+
+$app->post('/file/chooseuser/:id', function($id) use ($app) {
+    //echo 'In file chooser post';
+if (!$_SESSION['user']) {
+        $app->render("access_denied.html.twig");
+        return;
+    }
+    $user = $app->request()->post('user');
+    if (!$user ) {
+        $app->render('/not_found.html.twig');
+        echo 'In file chooser post';
+        return;
+    }
+    
+    DB::SELECT('users', "id=%i", $user);
+    if (DB::affectedRows() == 0) {
+        $app->render('/not_found.html.twig');
+    } else {
+        $app->render('/file_chooseuser.html.twig');
+    }
+});
 

@@ -132,6 +132,26 @@ Azam
 https://stackoverflow.com/questions/18216930/how-to-create-folder-with-php-code
 
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+16/11/
+1.I craeted the listfile,add/delte,accessdenied,add/edit success full, created the file php.
+
+2.I have to find errors in add/edit page
+3.I'll ask teacher about share and folder,how can I created the folder(we have create a directory for folder or have to create a folder in upload)
+
+https://stackoverflow.com/questions/18216930/how-to-create-folder-with-php-code
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+17/11/
+1.I craeted a list for choosing the user, created the Css file,share php.
+
+2.I have to finish share php
+3.I'll ask teacher to view other user file. 
+
+https://stackoverflow.com/questions/18216930/how-to-create-folder-with-php-code
+
 
 
 

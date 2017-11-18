@@ -143,7 +143,7 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
 
 ////choose user
 
-$app->get('/file/chooseuser/:id', function($id) use ($app) {
+$app->get('/file/share/:id', function($id) use ($app) {
     if (!$_SESSION['user'] ) {
         $app->render("access_denied.html.twig");
         return;
@@ -154,11 +154,11 @@ $app->get('/file/chooseuser/:id', function($id) use ($app) {
     }
     //
     $usersList = DB::query("SELECT * FROM users");
-     $app->render('file_chooseuser.html.twig', array('list' => $usersList));
+     $app->render('file_share.html.twig', array('list' => $usersList));
 });
 
 
-$app->post('/file/chooseuser/:id', function($id) use ($app) {
+$app->post('/file/share/:id', function($id) use ($app) {
     //echo 'In file chooser post';
 if (!$_SESSION['user']) {
         $app->render("access_denied.html.twig");
@@ -171,11 +171,11 @@ if (!$_SESSION['user']) {
         return;
     }
     
-     DB::insert('shares', array('fileid' => $id, 'usrid' => $user));
+     DB::insert('shares', array('fileid' => $id, 'userid' => $user));
     if (DB::affectedRows() == 0) {
         $app->render('/not_found.html.twig');
     } else {
-        $app->render('/file_chooseuser.html.twig');
+        $app->render('/file_share.html.twig');
     }
 });
 

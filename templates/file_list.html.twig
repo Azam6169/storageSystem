@@ -2,6 +2,7 @@
 {% block title %}Files list{% endblock %}
 {% block content %}
     <p><a href="/file/add">Add Files</a><p>
+    <p>MY Files</a><p>
     <table border=1>
         <tr><th>#</th><th>File Name</th><th>Unique Name</th><th>Action</th></tr>
         {% for p in list %}
@@ -12,7 +13,31 @@
                     <td>
                         <a href="/file/delete/{{p.id}}">Delete</a>
                         <a href="/file/edit/{{p.id}}">Edit</a>
-                        <a href="/file/chooseuser/{{p.id}}">Share</a>   
+                        <a href="/file/share/{{p.id}}">Share</a>   
+                    </td>
+                </tr>
+        {% else %}
+            <tr><td colspan="6"> You have no files</td></tr>
+        {% endfor %}
+    </table>         
+        
+
+
+
+
+   
+    <p>Share'files with me<p>
+    <table border=1>
+        <tr><th>#</th><th>File Name</th><th>Unique Name</th><th>Action</th></tr>
+        {% for p in list %}
+                <tr class="{% if loop.index is odd %}rowodd{% else %}roweven{% endif %}">
+                    <td>{{p.id}}</td>                                       
+                    <td>{{p.filename}}</td>
+                    <td>{{p.secretdir}}</td>
+                    <td>
+                        <a href="/file/delete/{{p.id}}">Delete</a>
+                        <a href="/file/edit/{{p.id}}">Edit</a>
+                        <a href="/file/share/{{p.id}}">Share</a>   
                     </td>
                 </tr>
         {% else %}
@@ -21,3 +46,4 @@
     </table>         
         
 {% endblock %}
+

@@ -108,6 +108,7 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
     // is file being uploaded
 //    echo $_FILES['filename']['error'];
 //    print_r($_FILES);
+    /////test from here/////
     if ($_FILES['filename']['error'] != UPLOAD_ERR_NO_FILE) {
         if ($filename == '') {
             array_push($errorList, "Error uploading file");
@@ -118,16 +119,16 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
                 $log->warn("Uploaded file name with .. in it (possible attack): " . print_r($filename, true));
             }
             // TODO: check if file already exists, check maximum size of the file, dimensions of the image etc.
-            $info = getimagesize($file["tmp_name"]);
-            if ($info == FALSE) {
-                array_push($errorList, "File doesn't look like a valid file");
-            } else {
-                if ($info['mime'] == 'file/txt' || $info['mime'] == 'file/rar' || $info['mime'] == 'fille/jpg') {
-                    // image type is valid - all good
-                } else {
-                    array_push($errorList, "");
-                }
-            }
+//            $info = getimagesize($file["tmp_name"]);
+//            if ($info == FALSE) {
+//                array_push($errorList, "File doesn't look like a valid file");
+//            } else {
+//                if ($info['mime'] == 'file/txt' || $info['mime'] == 'file/rar' || $info['mime'] == 'fille/jpg') {
+//                    // image type is valid - all good
+//                } else {
+//                    array_push($errorList, "");
+//                }
+//            }
         }
     } else { // no file uploaded
 //        echo 'Line 134';

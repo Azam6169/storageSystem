@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/PHP-project/files.php</file>
-            <file>file:/C:/xampp/htdocs/PHP-project/templates/file_addedit_success.html.twig</file>
-            <file>file:/C:/xampp/htdocs/PHP-project/templates/file_chooseuser_success.html.twig</file>
-            <file>file:/C:/xampp/htdocs/PHP-project/templates/login_success.html.twig</file>
-            <file>file:/C:/xampp/htdocs/PHP-project/templates/file_chooseuser.html.twig</file>
-            <file>file:/C:/xampp/htdocs/PHP-project/templates/not_found.html.twig</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/scrum.txt</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/cloudstorage.php</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/files.php</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/share.php</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/templates/file_addedit.html.twig</file>
         </group>
     </open-files>
 </project-private>

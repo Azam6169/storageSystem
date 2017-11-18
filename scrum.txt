@@ -152,6 +152,13 @@ Azam
 
 https://stackoverflow.com/questions/18216930/how-to-create-folder-with-php-code
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+18/11/
+1.I added share link to list file view,implement the choosing user,
+
+2.I have to insert the field to the share table.
+3.I'll serach more. 
 
 
 

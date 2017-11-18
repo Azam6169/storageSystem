@@ -171,7 +171,7 @@ if (!$_SESSION['user']) {
         return;
     }
     
-    DB::SELECT('users', "id=%i", $user);
+     DB::insert('shares', array('fileid' => $id, 'usrid' => $user));
     if (DB::affectedRows() == 0) {
         $app->render('/not_found.html.twig');
     } else {

@@ -19,8 +19,11 @@ $app->get('/list', function() use ($app) {
     }
     $userId = $_SESSION['user']['id'];
     $fileList = DB::query("SELECT * FROM files "
-            . "WHERE userid =%i", $userId);
-    $app->render("/file_list.html.twig", array('list' => $fileList));
+            . "WHERE userid =%i", $userId); 
+    $sharefilelist =DB::query("SELECT F.* FROM files as F INNER JOIN shares as S ON F.id = S.fileid WHERE S.userid = %i", $userId);
+    
+    
+    $app->render("/file_list.html.twig", array('ownlist' => $fileList,'sharelist' =>$sharefilelist));
 });
 
 // Delete File 
@@ -95,13 +98,44 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
         return;
     }
    
-//    $filename = $_FILES['filename'];
-//    $values = array('filename' => $filename);
-//    $errorList = array();
-   
-    //var_dump($file);
     $file = $_FILES['filename'];
     $filename = $file['name'];
+    $values = array('filename' => $filename);
+    $errorList = array();
+   
+    //var_dump($file);
+ 
+    // is file being uploaded
+//    echo $_FILES['filename']['error'];
+//    print_r($_FILES);
+    if ($_FILES['filename']['error'] != UPLOAD_ERR_NO_FILE) {
+        if ($filename == '') {
+            array_push($errorList, "Error uploading file");
+            $log->err("Error uploading file: " . print_r($filename, true));
+        } else {
+            if (strstr($filename , '..')) {
+                array_push($errorList, "Invalid file name");
+                $log->warn("Uploaded file name with .. in it (possible attack): " . print_r($filename, true));
+            }
+            // TODO: check if file already exists, check maximum size of the file, dimensions of the image etc.
+            $info = getimagesize($file["tmp_name"]);
+            if ($info == FALSE) {
+                array_push($errorList, "File doesn't look like a valid file");
+            } else {
+                if ($info['mime'] == 'file/txt' || $info['mime'] == 'file/rar' || $info['mime'] == 'fille/jpg') {
+                    // image type is valid - all good
+                } else {
+                    array_push($errorList, "");
+                }
+            }
+        }
+    } else { // no file uploaded
+//        echo 'Line 134';
+        
+            array_push($errorList, "file is required when creating new product");
+    
+    }
+   
     
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
     //var_dump($ext);
@@ -113,7 +147,7 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
   
     //
     $values = array('filename' => $filename, 'secretdir' => $uniqueName);
-    $errorList = array();
+   
     //
     
     // add the condition for adding file
@@ -170,12 +204,16 @@ if (!$_SESSION['user']) {
         echo 'In file chooser post';
         return;
     }
-    
+    if (!DB::queryFirstRow('select id from shares where fileid=%i and userid =%i',$id ,$user))
+            
+    { 
      DB::insert('shares', array('fileid' => $id, 'userid' => $user));
-    if (DB::affectedRows() == 0) {
+        if (DB::affectedRows() == 0) {
         $app->render('/not_found.html.twig');
-    } else {
-        $app->render('/file_share.html.twig');
     }
+    
+    } 
+        $app->render('/file_share_success.html.twig');
+    
 });
 

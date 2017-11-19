@@ -160,6 +160,15 @@ Azam
 2.I have to insert the field to the share table.
 3.I'll serach more. 
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+19/11/
+1.I implemented the file/share template,file/share part in file.php
+-Error checking if user already the same file(prevent duplicate file) done.
+-Error checing if user doen't choos a file in upload file section done.
+
+2.I have to implement edit and Delete for share's file list.
+3.I will ask teacher by email if he can see my git to help. 
 
 
 

@@ -37,6 +37,7 @@ require_once 'account.php';
 require_once 'files.php';
 require_once 'register.php';
 require_once 'share.php';
+require_once 'search.php';
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = array();

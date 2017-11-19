@@ -167,8 +167,8 @@ Azam
 -Error checking if user already the same file(prevent duplicate file) done.
 -Error checing if user doen't choos a file in upload file section done.
 
-2.I have to implement edit and Delete for share's file list.
-3.I will ask teacher by email if he can see my git to help. 
+2.I have to modify Delete for share's file list.
+3.I will ask teacher how can I do it in two tables in files and ssshares ,I have to delette it at same time. 
 
 
 
@@ -186,17 +186,6 @@ Azam
 /////for choosing the user
 selectable list html
 https://www.google.com/analytics/#?modal_active=none
-
-/////////
-$app->get('/', function() use ($app) {
-    $userList = array();
-    if ($_SESSION['user']) {
-        $todoList = DB::query('SELECT ** FROM files WHERE ownerId=%i', $_SESSION['user']['id']);
-    }
-    $app->render('chooseuser.html.twig', array('userList' => $userList));
-});
-
-//////
 
 
 

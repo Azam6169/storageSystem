@@ -4,12 +4,12 @@
     <p><a href="/file/add">Add Files</a><p>
     <p>MY Files</a><p>
     <table border=1>
-        <tr><th>#</th><th>File Name</th><th>Unique Name</th><th>Action</th></tr>
+        <tr><th>#</th><th>File Name</th><th>Action</th></tr>
         {% for p in ownlist %}
                 <tr class="{% if loop.index is odd %}rowodd{% else %}roweven{% endif %}">
                     <td>{{p.id}}</td>                                       
                     <td>{{p.filename}}</td>
-                    <td>{{p.secretdir}}</td>
+                   
                     <td>
                         <a href="/file/delete/{{p.id}}">Delete</a>
                         <a href="/file/edit/{{p.id}}">Edit</a>
@@ -28,12 +28,12 @@
    
     <p>Share'files with me<p>
     <table border=1>
-        <tr><th>#</th><th>File Name</th><th>Unique Name</th><th>Action</th></tr>
+        <tr><th>#</th><th>File Name</th><th>Action</th></tr>
         {% for p in sharelist %}
                 <tr class="{% if loop.index is odd %}rowodd{% else %}roweven{% endif %}">
                     <td>{{p.id}}</td>                                       
                     <td>{{p.filename}}</td>
-                    <td>{{p.secretdir}}</td>
+                   
                     <td>
                         <a href="/file/delete/{{p.id}}">Delete</a>
                         <a href="/file/edit/{{p.id}}">Edit</a>

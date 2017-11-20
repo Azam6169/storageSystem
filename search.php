@@ -28,7 +28,7 @@ $app->post('/search', function() use ($app, $log) {
    // $values = array('latA' => $latA, 'latB' => $latB, 'longA' => $longA, 'longB' => $longB);
    
 
-       $values = DB::query('SELECT * from files WHERE filename LIKE %ss', $price);
+       $values = DB::query('SELECT * from files WHERE filename LIKE %ss', $filename);
 
        $list = DB::query('SELECT * from files WHERE latitude BETWEEN %d AND %d AND longitude BETWEEN  %d AND %d', $latA, $latB,$longA,$longB);
     $app->render('/searchgooglemap.html.twig', array('f' => $list, 'p'=>$values));

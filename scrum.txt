@@ -169,6 +169,17 @@ Azam
 
 2.I have to modify Delete for share's file list.
 3.I will ask teacher how can I do it in two tables in files and ssshares ,I have to delette it at same time. 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+19/11/
+1.User can share files with other users
+-Prevent to duplicate file share is do
+
+
+ //////////////For teacher to read/////////////////////////
+2.I did the Css for list of owne Fie and shar's file but by mistake this line:{% extends "master.html.twig" %} on top of the page of file_list.html  was comment I did't care so the pic that I put in my 
+presentation it was't get the style.please if you look at my git is clear.
+3.I will ask teacher how can I do it in two tables in files and ssshares ,I have to delette it at same time. (I did the Css for pages already),Appreciate if you change the grade.
 
 
 

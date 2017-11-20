@@ -6,21 +6,18 @@
 
     <form method="post">
         <input type='text' name='search' value='{{f.search}}'/>
-        <input type="checkbox" name="location" value="location"> Location
-        <input type="checkbox" name="price" value="price"> filename <br>
+        <input type="checkbox" name="name" value="filename"> filename <br>
         <input type='submit' value='Search' />
     </form>
 
         <h2>Search Results </h2>
         <table border=1>
-          <tr><th>#</th><th>FileName</th><th>Latitude</th><th>Longitude</th><th>Beds</th>
-              <th>Baths</th><th>Price</th><th>SqureFeet</th><th>Image</th></tr>
+          <tr><th>#</th><th>FileName</th></tr>
         {% for p in f %}
                 <tr class="{% if loop.index is odd %}rowodd{% else %}roweven{% endif %}">
                     <td>{{p.fileid}}</td>
                     <td>{{p.filename}}</td>
-                    <td>{{p.ownerid}}</td>
-                    <td>{{p.secretdir}}</td>                  
+                                  
                 </tr>
         {% else %}
             <tr><td colspan="6"> There is no Result for you</td></tr>

@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/PHP-Project/templates/master.html.twig</file>
             <file>file:/C:/xampp/htdocs/PHP-Project/templates/search.html.twig</file>
-            <file>file:/C:/xampp/htdocs/PHP-Project/cloudstorage.php</file>
             <file>file:/C:/xampp/htdocs/PHP-Project/templates/searchresults.html.twig</file>
             <file>file:/C:/xampp/htdocs/PHP-Project/files.php</file>
-            <file>file:/C:/xampp/htdocs/PHP-Project/login.php</file>
-            <file>file:/C:/xampp/htdocs/PHP-Project/templates/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/account.php</file>
             <file>file:/C:/xampp/htdocs/PHP-Project/search.php</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/share.php</file>
+            <file>file:/C:/xampp/htdocs/PHP-Project/templates/searchgooglemap.html.twig</file>
         </group>
     </open-files>
 </project-private>

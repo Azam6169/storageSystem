@@ -117,9 +117,6 @@ $app->post('/file/:op(/:id)', function($op, $id = -1) use ($app, $log) {
                 array_push($errorList, "Invalid file name");
                 $log->warn("Uploaded file name with .. in it (possible attack): " . print_r($filename, true));
             }
-
-          
-            
         }
     } else { // no file uploaded
 //        echo 'Line 134';

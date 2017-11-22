@@ -169,6 +169,18 @@ Azam
 
 2.I have to modify Delete for share's file list.
 3.I will ask teacher how can I do it in two tables in files and ssshares ,I have to delette it at same time. 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Azam
+20/11/
+1.Users can share their files with other users.
+-User can see their file's list and the list of share's file with them.
+-User.s can't share dupplicate share file.
+-I prepared my presentation.
+
+2.I have to modify Delete for share's file list.
+3.I will ask teacher to help me for search part. 
+
+
 
 
 

@@ -171,6 +171,7 @@ Azam
 3.I will ask teacher how can I do it in two tables in files and ssshares ,I have to delette it at same time. 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Azam
+<<<<<<< HEAD
 20/11/
 1.Users can share their files with other users.
 -User can see their file's list and the list of share's file with them.
@@ -181,6 +182,17 @@ Azam
 3.I will ask teacher to help me for search part. 
 
 
+=======
+19/11/
+1.Users can share files with other users
+-Prevent to duplicate file share is do
+
+
+ //////////////For teacher to read/////////////////////////
+2.I did the Css for list of owne Fie and shar's file but by mistake this line:{% extends "master.html.twig" %} on top of the page of file_list.html  was comment I did't care so the pic that I put in my 
+presentation it was't get the style.please if you look at my git is clear.
+3.I will ask teacher how can I do it in two tables in files and ssshares ,I have to delette it at same time. (I did the Css for pages already),Appreciate if you change the grade.
+>>>>>>> 9fcb484967d81576aa26b9071877a109d66e2185
 
 
 

@@ -6,13 +6,21 @@
 
     <form method="post">
         <input type='text' name='search' value='{{f.search}}'/>
+<<<<<<< HEAD
         <input type="checkbox" name="name" value="filename"> Location
+=======
+        <input type="checkbox" name="name" value="filename"> filename <br>
+>>>>>>> 9fcb484967d81576aa26b9071877a109d66e2185
         <input type='submit' value='Search' />
     </form>
 
         <h2>Search Results </h2>
         <table border=1>
+<<<<<<< HEAD
           <tr><th>#</th><th>FileName</th>
+=======
+          <tr><th>#</th><th>FileName</th></tr>
+>>>>>>> 9fcb484967d81576aa26b9071877a109d66e2185
         {% for p in f %}
                 <tr class="{% if loop.index is odd %}rowodd{% else %}roweven{% endif %}">
                     <td>{{p.fileid}}</td>
